@@ -23,4 +23,7 @@ public class ServicioCanciones {
         Optional<Cancion> cancion = repo.findById(id);
         return cancion.orElse(null);
     }
+    public Cancion agregarCancion(Cancion cancion) {
+        return repo.save(cancion);
+    }
 }

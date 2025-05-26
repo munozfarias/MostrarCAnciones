@@ -3,9 +3,12 @@ package com.marcelomunoz.controladores;
 import com.marcelomunoz.modelos.Cancion;
 import com.marcelomunoz.servicios.ServicioCanciones;
 
+import jakarta.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
@@ -26,4 +29,23 @@ public class ControladorCanciones {
         model.addAttribute("cancion", cancion);
         return "detalleCancion";
     }
+    @GetMapping("/canciones/formulario/agregar")
+    public String formularioAgregarCancion(Model model) {
+        model.addAttribute("cancion", new Cancion());
+        return "agregarCancion";
+    }
+
+    @PostMapping("/canciones/procesa/agregar")
+    public String procesarAgregarCancion(
+            @Valid @ModelAttribute("cancion") Cancion cancion,
+            BindingResult resultado) {
+
+        if (resultado.hasErrors()) {
+            return "agregarCancion";
+        }
+
+        servicio.agregarCancion(cancion);
+        return "redirect:/canciones";
+    }
+
 }
