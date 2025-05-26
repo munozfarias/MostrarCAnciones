@@ -44,6 +44,13 @@ public class ControladorCanciones {
         model.addAttribute("cancion", cancion);
         return "editarCancion";
     }
+    
+    @GetMapping("/canciones/eliminar/{idCancion}")
+    public String procesarEliminarCancion(@PathVariable("idCancion") Long id) {
+        servicio.eliminaCancion(id);
+        return "redirect:/canciones";
+    }
+
 
 
     @PostMapping("/canciones/procesa/agregar")

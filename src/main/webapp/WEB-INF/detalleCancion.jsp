@@ -17,5 +17,9 @@
     <p><strong>Última actualización:</strong> ${cancion.fechaActualizacion}</p>
     <a href="/canciones">Volver a lista de canciones</a>
 	<a href="/canciones/formulario/editar/${cancion.id}">Editar esta canción</a>
+	<a href="/canciones/eliminar/${cancion.id}" class="btn eliminar" onclick="return confirm('¿Estás seguro de que deseas eliminar esta canción?');">
+	    Eliminar esta canción
+	</a>
+
 </body>
 </html>

@@ -72,3 +72,12 @@ a:hover {
   background-color: #005fa3;
 }
 
+.eliminar {
+  background-color: #cc3333;
+  color: white;
+}
+
+.eliminar:hover {
+  background-color: #aa0000;
+}
+
