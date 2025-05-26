@@ -17,8 +17,9 @@ public class Cancion {
     @Size(min = 5, message = "El título debe tener al menos 5 caracteres.")
     private String titulo;
 
-    @Size(min = 3, message = "El artista debe tener al menos 3 caracteres.")
-    private String artista;
+    @ManyToOne(fetch = FetchType.LAZY)  //Se modificó para hacer Join en una versión mas reciente.
+    @JoinColumn(name = "artista_id")
+    private Artista artista;
 
     @Size(min = 3, message = "El álbum debe tener al menos 3 caracteres.")
     private String album;
@@ -46,7 +47,7 @@ public class Cancion {
         return titulo;
     }
 
-    public String getArtista() {
+    public Artista getArtista() {
         return artista;
     }
 
@@ -78,7 +79,7 @@ public class Cancion {
         this.titulo = titulo;
     }
 
-    public void setArtista(String artista) {
+    public void setArtista(Artista artista) {
         this.artista = artista;
     }
 
