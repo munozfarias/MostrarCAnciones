@@ -4,7 +4,7 @@
 
 <html>
 <head><title>Detalle de Canción</title>
-<link rel="stylesheet" href="/css/styles.css">
+	<link rel="stylesheet" href="/estilos/styles.css">
 </head>
 <body>
     <h1>Detalle de Canción</h1>
@@ -16,5 +16,6 @@
     <p><strong>Fecha creación:</strong> ${cancion.fechaCreacion}</p>
     <p><strong>Última actualización:</strong> ${cancion.fechaActualizacion}</p>
     <a href="/canciones">Volver a lista de canciones</a>
+	<a href="/canciones/formulario/editar/${cancion.id}">Editar esta canción</a>
 </body>
 </html>

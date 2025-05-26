@@ -26,4 +26,7 @@ public class ServicioCanciones {
     public Cancion agregarCancion(Cancion cancion) {
         return repo.save(cancion);
     }
+    public Cancion actualizaCancion(Cancion cancion) {
+        return repo.save(cancion); 
+    }
 }

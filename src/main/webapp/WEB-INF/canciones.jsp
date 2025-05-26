@@ -5,7 +5,7 @@
 <html>
 <head>
     <title>Listado de Canciones</title>
-	<link rel="stylesheet" href="/css/styles.css">
+	<link rel="stylesheet" href="/estilos/styles.css">
 </head>
 <body>
     <h1>Canciones</h1>
